@@ -1,0 +1,71 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #5e2e8c;
+  color: white;
+padding: 0.5rem 1.5rem;
+  position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+
+  z-index: 1000;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-right a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Always show hamburger icon */
+.hamburger {
+  display: inline-block;
+  font-size: 1.5rem;
+  margin-left: 1.5rem;
+  cursor: pointer;
+}
+
+/* Slide-out sidebar menu */
+.slide-menu {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 220px;
+  height: 100%;
+  background: linear-gradient(to right, #b47ac6, #a674c1);
+  color: white;
+  padding: 0.5rem 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  transition: right 0.3s ease-in-out;
+  z-index: 9999;
+}
+
+.slide-menu.open {
+  right: 0;
+}
+
+.slide-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.close-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}

@@ -1,0 +1,54 @@
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100vw; /* ensure it spans full screen width */
+  padding: 100px 60px 40px;
+  background: linear-gradient(135deg, #6e2fa6, #bf3bbf);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  max-width: 50%;
+  z-index: 1;
+}
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+.hero h1 span {
+  font-weight: 700;
+}
+
+.hero-buttons {
+  margin-top: 30px;
+}
+
+.outline-btn {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 12px 24px;
+  margin-right: 20px;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.outline-btn:hover {
+  background: white;
+  color: #6e2fa6;
+}
+
+.hero-image {
+  max-height: 80%;
+  max-width: 40%;
+  object-fit: contain;
+}

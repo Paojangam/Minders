@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+background: linear-gradient(to right, #b47ac6, #a674c1);}
+
+.new-entry-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar-placeholder {
+  height: 60px;
+  background-color: #ce82f2;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.entry-container {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 3rem 1rem;
+  flex-grow: 1;
+}
+
+.entry-card {
+  background-color: white;
+  width: 90%;
+  max-width: 900px;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.entry-meta {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.entry-title {
+  background-color: white; /* ✅ Make input field white */
+  width: 100%;
+  border: none;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  outline: none;
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 0.5rem;
+  color: #333; /* Optional: set text color */
+}
+
+.entry-text {
+  background-color: white; /* ✅ Make textarea white */
+  width: 100%;
+  height: 400px;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333; /* Optional: set text color */
+  padding: 1rem;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+

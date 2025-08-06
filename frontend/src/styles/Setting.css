@@ -1,0 +1,139 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensures it's above all content */
+}
+
+.settings-modal {
+  width: 500px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: "Segoe UI", sans-serif;
+  position: relative;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  background: linear-gradient(to right, #b47ac6, #a674c1);
+  padding: 1.5rem;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.close-button {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-tabs {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+
+.modal-tabs button {
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
+  background: white;
+  font-weight: 500;
+  cursor: pointer;
+  border-right: 1px solid #ddd;
+}
+
+.modal-tabs button:last-child {
+  border-right: none;
+}
+
+.modal-tabs .active-tab {
+  background: #f6e4fb;
+  color: #8c2ca1;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  color: #6b2c91;
+  font-weight: 500;
+}
+
+.color-box,
+.theme-box {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.font-group select {
+  padding: 0.4rem;
+  margin-left: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.delete-link {
+  color: red;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.save-btn {
+  background: #a674c1;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.save-btn:hover {
+  background: #9228a8;
+}

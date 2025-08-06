@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Navbar height compensation */
+.dashboard {
+  background: linear-gradient(to right, #b47ac6, #a674c1); /* Darker purples */
+  min-height: 100vh;
+  padding-top: 70px; /* push content below navbar */
+}
+
+.dashboard-header {
+  background-color: #f5f5f5;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #d4c4e4;
+}
+
+.new-journal-btn {
+  background-color: #7b3fa3; /* Darker purple */
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dashboard-main {
+  display: flex;
+  padding: 2rem;
+}
+
+.journal-section {
+  width: 65%;
+}
+
+.journal-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.journal-card h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+}
+
+.card-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.card-actions button {
+  background-color: #4b0082;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.side-panel {
+  width: 35%;
+  margin-left: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.upgrade-btn {
+  margin-top: 1rem;
+  background-color: #a64ca6;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.myjournal {
+  background-color: #4b0082; /* Dark purple */
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.owner {
+  background: linear-gradient(90deg, #d8b4f8, #f8b4d8); /* Light purple to pink */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+
