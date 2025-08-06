@@ -1,0 +1,113 @@
+.home {
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+}
+
+.info-section {
+  padding: 80px 60px;
+  background: #f8f8f8;
+  text-align: center;
+}
+
+.info-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #6e2fa6;
+}
+
+.info-section p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: auto;
+  color: #444;
+}
+.home {
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth; /* ✅ enables smooth scroll */
+}
+
+.about-section {
+  padding: 100px 60px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  color: #6e2fa6;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: auto;
+  color: #444;
+}
+.about-section {
+  padding: 100px 60px;
+  background-color: #ffffff;
+  text-align: center;
+  scroll-margin-top: 80px;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  color: #6e2fa6;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  color: #444;
+}
+.about-image {
+  width: 80%;             /* 👈 less wide than full width */
+  max-width: 700px;       /* 👈 narrower max width */
+  height: 280px;          /* 👈 fixed height to shorten the image */
+  object-fit: cover;      /* 👈 crops the image to fit height/width */
+  display: block;
+  margin: 40px auto 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+.features-section {
+  padding: 80px 60px;
+  background-color: #fafafa;
+  text-align: center;
+}
+
+.features-section h2 {
+  font-size: 2rem;
+  color: #6e2fa6;
+  margin-bottom: 40px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.feature-item {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: #6e2fa6;
+  margin-bottom: 15px;
+}
