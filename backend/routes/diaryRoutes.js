@@ -1,13 +1,21 @@
- 
 const express = require('express');
 const router = express.Router();
 
-const { createEntry, getAllEntries } = require('../controllers/diaryController');
+const authenticateUser = require('../middleware/auth'); // ✅ import middleware
 
-// POST - Create a new diary entry
-router.post('/', createEntry);
+const {
+  createEntry,
+  getAllEntries,
+  getEntryById,
+  updateEntryById,
+  deleteEntryById
+} = require('../controllers/diaryController');
 
-// GET - Get all diary entries
-router.get('/', getAllEntries);
+// ✅ Use authenticateUser middleware to protect routes
+router.post('/', authenticateUser, createEntry);
+router.get('/', authenticateUser, getAllEntries);
+router.get('/:id', authenticateUser, getEntryById);
+router.put('/:id', authenticateUser, updateEntryById);
+router.delete('/:id', authenticateUser, deleteEntryById);
 
 module.exports = router;

@@ -1,0 +1,60 @@
+.graph-page {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 20px 40px;
+   padding-top: 60px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.graph-title {
+  display: block !important;
+  visibility: visible !important;
+  color: black !important;
+  font-size: 2rem !important;
+  margin: 1rem 0 !important;
+}
+
+.charts-row {
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.chart-container {
+  max-width: 400px;
+  width: 100%;
+}
+
+.percentages {
+  margin-top: 12px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.percentages p {
+  margin: 4px 0;
+}
+
+.trend-note {
+  margin-top: 12px;
+  font-size: 1rem;
+  font-style: italic;
+  color: #666;
+}
+
+.overall-message {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+  margin-top: 2rem;
+}
+
+.loading-text,
+.no-entries-text {
+  margin-top: 3rem;
+  font-size: 1.2rem;
+  color: #777;
+}

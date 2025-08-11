@@ -15,6 +15,9 @@ const Navbar = () => {
 
   // Toggle hamburger menu
   const toggleMenu = () => setMenuOpen(!menuOpen);
+  const handleBrandClick = () => {
+    navigate('/dashboard');
+  };
 
   // Close the menu if clicking outside
   useEffect(() => {
@@ -38,7 +41,9 @@ const Navbar = () => {
     <>
       <nav className="navbar">
         <div className="navbar-left">
-          <span className="brand">Minders</span>
+<span className="brand" onClick={handleBrandClick} style={{ cursor: 'pointer' }}>
+        Minders
+      </span>
         </div>
 
         <div className="navbar-right">

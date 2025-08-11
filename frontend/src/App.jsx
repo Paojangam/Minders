@@ -16,6 +16,7 @@ import Setting from './components/Setting';
 import Navbar from './components/Navbar';
 import { AuthProvider } from './context/AuthContext';
 import PrivateRoute from './components/PrivateRoute';
+import GraphPage from './components/GraphPage';
 
 // Handles Navbar visibility
 const AppRoutes = () => {
@@ -31,8 +32,17 @@ const AppRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
 
-   <Route path="/dashboard" element={<Dashboard />} />
+        {/* Private Routes */}
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        />
 
+        {/* Create New Entry */}
         <Route
           path="/newentry"
           element={
@@ -41,6 +51,25 @@ const AppRoutes = () => {
             </PrivateRoute>
           }
         />
+        <Route
+          path="/graph"
+          element={
+            <PrivateRoute>
+              <GraphPage />
+            </PrivateRoute>
+          }
+        />
+
+        {/* View/Edit Existing Entry */}
+        <Route
+          path="/entry/:id"
+          element={
+            <PrivateRoute>
+              <Newentry />
+            </PrivateRoute>
+          }
+        />
+
         <Route
           path="/entries"
           element={

@@ -54,3 +54,56 @@
   font-size: 0.8rem;
   color: #9d6fa7;
 }
+.delete-icon {
+  color: #d9534f;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-left: 10px;
+  transition: transform 0.2s ease;
+}
+
+.delete-icon:hover {
+  transform: scale(1.2);
+}
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* Mood badge container */
+.entry-mood {
+  margin-bottom: 8px;
+}
+
+/* Base badge styles */
+.mood-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  width: fit-content;
+  user-select: none;
+}
+
+/* Positive (green) */
+.mood-badge.positive {
+  background-color: #d4edda; /* light green */
+  color: #155724; /* dark green */
+}
+
+/* Neutral (yellow) */
+.mood-badge.neutral {
+  background-color: #fff3cd; /* light yellow */
+  color: #856404; /* dark yellow */
+}
+
+/* Negative (red) */
+.mood-badge.negative {
+  background-color: #f8d7da; /* light red */
+  color: #721c24; /* dark red */
+}
+

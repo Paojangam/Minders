@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import "../styles/NewEntry.css";
 import Navbar from "../components/Navbar";
 import api from "../api"; // Axios instance
 
 const NewEntry = () => {
+  const { id } = useParams(); // Get entry ID if available
+  const isEditing = Boolean(id); // true if editing
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [message, setMessage] = useState('');
@@ -15,19 +18,44 @@ const NewEntry = () => {
     year: "numeric"
   });
 
+  // Fetch entry if editing
+  useEffect(() => {
+    const fetchEntry = async () => {
+      if (!isEditing) return;
+      try {
+        const res = await api.get(`/diary/${id}`);
+        setTitle(res.data.title);
+        setContent(res.data.content);
+      } catch (err) {
+        console.error("Failed to load entry:", err);
+        setMessage("❌ Failed to load entry");
+      }
+    };
+
+    fetchEntry();
+  }, [id, isEditing]);
+
+  // Save or update entry
   const handleSave = async () => {
     try {
-      setMessage("Saving your journal...");
+      setMessage(isEditing ? "Updating your journal..." : "Saving your journal...");
 
-      await api.post('/diary', {
-        title,
-        content,
-        mood: 'neutral' // Optional: Add mood tracking later
-      });
-
-      setMessage("✅ Saved successfully!");
-      setTitle('');
-      setContent('');
+      if (isEditing) {
+        await api.put(`/diary/${id}`, {
+          title,
+          content
+        });
+        setMessage("✅ Entry updated!");
+      } else {
+        await api.post('/diary', {
+          title,
+          content,
+          mood: 'neutral' // Optional
+        });
+        setMessage("✅ Saved successfully!");
+        setTitle('');
+        setContent('');
+      }
     } catch (err) {
       console.error(err.response?.data || err.message);
       setMessage("❌ Failed to save. Try again.");
@@ -49,7 +77,9 @@ const NewEntry = () => {
           />
           <div className="entry-meta">
             <span className="entry-date">📅 {today}</span>
-            <span className="entry-save" onClick={handleSave}>💾 Save now</span>
+            <span className="entry-save" onClick={handleSave}>
+              💾 {isEditing ? "Update" : "Save now"}
+            </span>
           </div>
           <textarea
             className="entry-text"

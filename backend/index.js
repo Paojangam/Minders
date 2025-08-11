@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const authRoutes = require('./routes/authRoutes');
 const diaryRoutes = require('./routes/diaryRoutes');
-
+const userRoutes = require('./routes/userRoutes'); // ✅ ADD THIS LINE
 
 const app = express();
 
@@ -14,11 +14,9 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use('/api/auth', require('./routes/authRoutes'));
-
+app.use('/api/auth', authRoutes);
 app.use('/api/diary', diaryRoutes);
-
-
+app.use('/api/user', userRoutes); // ✅ ADD THIS LINE
 
 app.get('/', (req, res) => {
   res.send('Welcome to Minders API!');
