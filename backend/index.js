@@ -10,7 +10,11 @@ const userRoutes = require('./routes/userRoutes'); // ✅ ADD THIS LINE
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:5173', 'https://minders-83rn.vercel.app/'],
+  credentials: true
+}));
+
 app.use(express.json());
 
 // Routes
