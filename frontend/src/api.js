@@ -1,8 +1,9 @@
 // src/api.js
 import axios from 'axios';
 
+// Use environment variable instead of hardcoding
 const api = axios.create({
-  baseURL: 'https://minders.onrender.com', // Update if deploying
+  baseURL: process.env.REACT_APP_API_URL, // Will be set in .env or Vercel
   headers: {
     'Content-Type': 'application/json',
   },
