@@ -38,7 +38,7 @@ const Entries = () => {
   };
 
   const handleViewEntry = (id) => {
-    navigate(`/api/entry/${id}`);
+    navigate(`/entry/${id}`);
   };
 
   const handleDeleteEntry = async (id) => {
