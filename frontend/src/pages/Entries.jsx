@@ -16,7 +16,7 @@ const Entries = () => {
 
   const fetchEntries = async () => {
     try {
-      const res = await api.get('/diary');
+      const res = await api.get('/api/diary');
       setEntries(res.data);
     } catch (error) {
       console.error("Failed to fetch entries:", error.message);
@@ -38,14 +38,14 @@ const Entries = () => {
   };
 
   const handleViewEntry = (id) => {
-    navigate(`/entry/${id}`);
+    navigate(`/api/entry/${id}`);
   };
 
   const handleDeleteEntry = async (id) => {
     if (!window.confirm('Are you sure you want to delete this entry?')) return;
 
     try {
-      await api.delete(`/diary/${id}`);
+      await api.delete(`/api/diary/${id}`);
       setEntries(entries.filter(entry => entry._id !== id));
     } catch (error) {
       console.error('Failed to delete entry:', error.message);

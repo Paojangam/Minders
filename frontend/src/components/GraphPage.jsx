@@ -35,7 +35,7 @@ const GraphPage = () => {
 
   const fetchEntries = async () => {
     try {
-      const res = await api.get('/diary');
+      const res = await api.get('/api/diary');
       setEntries(res.data);
     } catch (error) {
       console.error('Failed to fetch entries:', error.message);

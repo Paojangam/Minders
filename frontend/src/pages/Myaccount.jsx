@@ -24,11 +24,11 @@
   if (!confirmDelete) return;
 
   try {
-    await api.delete('/user/me'); // or the appropriate endpoint for deleting user
+    await api.delete('/api/user/me'); // or the appropriate endpoint for deleting user
     alert('Account deleted successfully.');
 
     // Redirect user after delete, e.g., to login or homepage:
-    window.location.href = '/login'; // or use react-router's navigate if you have it
+    window.location.href = '/api/login'; // or use react-router's navigate if you have it
   } catch (error) {
     console.error('Failed to delete account:', error);
     alert('Failed to delete account. Please try again.');
@@ -40,7 +40,7 @@
     useEffect(() => {
       const fetchUserData = async () => {
         try {
-         const res = await api.get('/user/me'); // ✅ Correct
+         const res = await api.get('/api/user/me'); // ✅ Correct
 
 
           const { firstName, lastName, email } = res.data;

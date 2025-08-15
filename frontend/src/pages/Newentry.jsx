@@ -23,7 +23,7 @@ const NewEntry = () => {
     const fetchEntry = async () => {
       if (!isEditing) return;
       try {
-        const res = await api.get(`/diary/${id}`);
+        const res = await api.get(`/api/diary/${id}`);
         setTitle(res.data.title);
         setContent(res.data.content);
       } catch (err) {
@@ -41,13 +41,13 @@ const NewEntry = () => {
       setMessage(isEditing ? "Updating your journal..." : "Saving your journal...");
 
       if (isEditing) {
-        await api.put(`/diary/${id}`, {
+        await api.put(`/api/diary/${id}`, {
           title,
           content
         });
         setMessage("✅ Entry updated!");
       } else {
-        await api.post('/diary', {
+        await api.post('/api/diary', {
           title,
           content,
           mood: 'neutral' // Optional
