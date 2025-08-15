@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import "../styles/NewEntry.css";
+import "../styles/Newentry.css";
 import Navbar from "../components/Navbar";
 import api from "../api"; // Axios instance
 
