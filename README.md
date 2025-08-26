@@ -22,6 +22,10 @@ It helps users track moods, talk anonymously, journal their thoughts, and access
   <b>Progress Tracker</b>
 </td>
 </tr>
+  <td align="center">
+  <img src="./frontend/public/assets/mentalexercise.png" width="300"/><br>
+  <b>Progress Tracker</b>
+</td>
 <tr>
 <td align="center">
   <img src="./frontend/public/assets/anonymouschat.png" width="300"/><br>
