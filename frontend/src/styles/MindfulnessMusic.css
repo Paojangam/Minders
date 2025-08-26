@@ -1,0 +1,89 @@
+.music-container {
+  padding-top: 5rem; /* keeps it below navbar */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  background: linear-gradient(to bottom right, #faf7ff, #f2f0ff); /* very light purple gradient */
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Intro guide card */
+.music-guide {
+  background: #ffffffee; /* white with slight transparency */
+  backdrop-filter: blur(14px);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(120, 81, 169, 0.12); /* purple shadow */
+  text-align: center;
+  max-width: 600px;
+}
+
+.music-guide h1 {
+  font-size: 2rem;
+  color: #6d5dfc; /* soft purple */
+  margin-bottom: 0.8rem;
+}
+
+.music-guide p {
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Grid of soundscapes */
+.music-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1000px;
+  padding: 1rem;
+}
+
+.music-card {
+  background: #ffffff;
+  padding: 1.8rem;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 8px 18px rgba(120, 81, 169, 0.15); /* purple shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.music-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(120, 81, 169, 0.2);
+}
+
+.music-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+  color: #6d5dfc;
+}
+
+.music-card p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 1.2rem;
+}
+
+/* Buttons with soft purple */
+.music-btn {
+  background: linear-gradient(135deg, #c6b8ff, #a797ff);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  color: white;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.music-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(109, 93, 252, 0.2);
+}

@@ -1,0 +1,82 @@
+.grounding-container {
+  padding-top: 5rem; /* keeps space below navbar */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  background: linear-gradient(to bottom right, #faf7ff, #f2f0ff);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Intro card */
+.grounding-guide {
+  background: #ffffffee;
+  backdrop-filter: blur(12px);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(120, 81, 169, 0.12);
+  text-align: center;
+  max-width: 700px;
+}
+
+.grounding-guide h1 {
+  font-size: 2rem;
+  color: #6d5dfc;
+  margin-bottom: 0.8rem;
+}
+
+.grounding-guide p {
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Step card */
+.grounding-card {
+  background: #ffffff;
+  padding: 2rem 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 18px rgba(120, 81, 169, 0.15);
+  text-align: center;
+  max-width: 500px;
+  transition: transform 0.3s ease;
+}
+
+.grounding-card:hover {
+  transform: translateY(-6px);
+}
+
+.grounding-card h2 {
+  font-size: 1.5rem;
+  color: #6d5dfc;
+  margin-bottom: 1rem;
+}
+
+.grounding-card p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+/* Buttons */
+.grounding-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.grounding-btn {
+  background: linear-gradient(135deg, #c6b8ff, #a797ff);
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 14px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grounding-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(109, 93, 252, 0.2);
+}

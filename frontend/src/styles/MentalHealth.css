@@ -1,0 +1,78 @@
+.mental-container {
+  max-width: 1000px;
+  margin: 80px auto 40px; /* space below navbar */
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+}
+
+.mental-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.mental-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.mental-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.mental-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 25px 20px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mental-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.mental-icon {
+  font-size: 2rem;
+  color: #6c63ff; /* soft purple */
+  margin-bottom: 15px;
+}
+
+.mental-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.mental-card p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.mental-btn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #6c63ff, #a98bff);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
+}
+
+.mental-btn:hover {
+  background: linear-gradient(135deg, #5a52e0, #9270ff);
+  box-shadow: 0 6px 16px rgba(108, 99, 255, 0.4);
+}

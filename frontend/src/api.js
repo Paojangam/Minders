@@ -1,13 +1,21 @@
- // src/api.js
+// src/api.js
 import axios from 'axios';
 
+// Determine base URL automatically if env variable is not set
+const baseURL =
+  import.meta.env.VITE_API_URL ||
+  (window.location.hostname === 'localhost'
+    ? 'http://localhost:5000'
+    : 'https://your-production-url.com');
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL, // reads from .env
+  baseURL: baseURL, // uses .env or falls back to localhost/production
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
+// Add token to headers if available
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');

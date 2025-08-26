@@ -57,10 +57,17 @@ const getAllEntries = async (req, res) => {
 // @access  Public
 const getEntryById = async (req, res) => {
   try {
-    const entry = await DiaryEntry.findById(req.params.id);
+    const userId = req.user?.userId;
+
+    if (!userId) {
+      return res.status(401).json({ message: 'User not authenticated' });
+    }
+
+    const entry = await DiaryEntry.findOne({ _id: req.params.id, userId }); // 👈 filter by both
     if (!entry) {
       return res.status(404).json({ message: 'Entry not found' });
     }
+
     res.status(200).json(entry);
   } catch (error) {
     console.error('Error getting entry by ID:', error);
@@ -85,19 +92,16 @@ const updateEntryById = async (req, res) => {
     }
 
     const mood = await analyzeMood(content);
-    console.log('Mood detected on update:', mood);
 
-    const updatedEntry = await DiaryEntry.findByIdAndUpdate(
-      req.params.id,
+    const updatedEntry = await DiaryEntry.findOneAndUpdate(
+      { _id: req.params.id, userId },  // 👈 filter by owner
       { title, content, mood },
       { new: true }
     );
 
     if (!updatedEntry) {
-      return res.status(404).json({ message: 'Entry not found' });
+      return res.status(404).json({ message: 'Entry not found or not yours' });
     }
-
-    console.log('Updated Entry:', updatedEntry);
 
     res.status(200).json(updatedEntry);
   } catch (error) {
@@ -110,13 +114,20 @@ const updateEntryById = async (req, res) => {
 // @route   DELETE /api/diary/:id
 // @access  Public
 const deleteEntryById = async (req, res) => {
-  console.log("DELETE request for ID:", req.params.id);
-
   try {
-    const deletedEntry = await DiaryEntry.findByIdAndDelete(req.params.id);
+    const userId = req.user?.userId;
+
+    if (!userId) {
+      return res.status(401).json({ message: 'User not authenticated' });
+    }
+
+    const deletedEntry = await DiaryEntry.findOneAndDelete({
+      _id: req.params.id,
+      userId
+    });
 
     if (!deletedEntry) {
-      return res.status(404).json({ message: 'Entry not found' });
+      return res.status(404).json({ message: 'Entry not found or not yours' });
     }
 
     res.status(200).json({ message: 'Entry deleted successfully' });
@@ -125,6 +136,7 @@ const deleteEntryById = async (req, res) => {
     res.status(500).json({ message: 'Server Error', error: error.message });
   }
 };
+
 
 module.exports = {
   createEntry,

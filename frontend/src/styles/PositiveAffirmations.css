@@ -1,0 +1,77 @@
+.affirmations-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem; /* keeps distance from navbar */
+  min-height: calc(100vh - 60px);
+  background: linear-gradient(to bottom right, #f8fbff, #eaf4ff, #fdfbfb);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.affirmations-card {
+  background: #ffffffcc;
+  backdrop-filter: blur(10px);
+  padding: 3rem 2.5rem;
+  border-radius: 22px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+  max-width: 550px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.affirmations-card:hover {
+  transform: translateY(-4px);
+}
+
+.affirmations-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #6d8dff;
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.affirmations-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #445077;
+}
+
+.affirmations-subtitle {
+  font-size: 1rem;
+  color: #6c7aa6;
+  margin-bottom: 2rem;
+}
+
+.affirmation-text {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+  padding: 1.5rem;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #f9fcff, #eef5ff);
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.affirmations-btn {
+  padding: 0.9rem 1.7rem;
+  background: linear-gradient(135deg, #9dbdff, #6d8dff);
+  border: none;
+  border-radius: 14px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.affirmations-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}

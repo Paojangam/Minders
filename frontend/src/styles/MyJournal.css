@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f5f5f8;
+}
+
+/* Dashboard layout */
+.myjournal-dashboard {
+  min-height: 100vh;
+  background: linear-gradient(to right, #f8f1ff, #e8e0f8);
+  padding-top: 70px; /* Navbar spacing */
+}
+
+/* Header */
+.journal-header {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.journal-header h1 {
+  font-size: 2.2rem;
+  color: #4b0082;
+}
+
+.journal-header p {
+  font-size: 1rem;
+  color: #6e4ca3;
+  margin-top: 0.5rem;
+}
+
+/* Main content */
+.journal-main {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 2rem;
+}
+
+/* Journal Card */
+.journal-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  flex: 1 1 300px;
+  max-width: 450px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.journal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+.journal-owner {
+  font-size: 1.6rem;
+  background: linear-gradient(90deg, #d8b4f8, #f8b4d8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+}
+
+/* Buttons */
+.journal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.journal-actions button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #8a2be2;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.journal-actions button:hover {
+  background: #6a1bb0;
+  transform: translateY(-2px);
+}
+
+.track-btn {
+  background: #d17ed1;
+}
+
+.track-btn:hover {
+  background: #a85ca8;
+}
+
+/* Side panel / suggestions */
+.journal-suggestions {
+  background: #fff;
+  border-radius: 20px;
+  padding: 1.8rem 2rem;
+  flex: 1 1 250px;
+  max-width: 350px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.journal-suggestions h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #4b0082;
+}
+
+.journal-suggestions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.journal-suggestions li {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  color: #6e4ca3;
+}

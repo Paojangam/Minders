@@ -1,0 +1,113 @@
+.breathing-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  padding-top: 5rem;   /* pushes content further down */
+  min-height: calc(100vh - 60px); /* if navbar is ~60px tall */
+  background: linear-gradient(to bottom right, #f5f7fa, #e3eeff);
+  font-family: "Segoe UI", sans-serif;
+}
+
+
+.breathing-main {
+  text-align: center;
+  flex: 2;
+}
+
+.breathing-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.breathing-subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.breathing-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #a8dadc, #457b9d);
+  margin: 2rem auto;
+  transition: all 3s ease-in-out;
+}
+
+.breathing-circle.small {
+  width: 100px;
+  height: 100px;
+}
+
+.breathing-circle.medium {
+  width: 150px;
+  height: 150px;
+}
+
+.breathing-circle.large {
+  width: 200px;
+  height: 200px;
+}
+
+.breathing-phase {
+  font-size: 1.5rem;
+  color: #222;
+  margin-top: 1rem;
+}
+
+.breathing-controls {
+  margin-top: 1.5rem;
+}
+
+.start-btn, .reset-btn {
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s;
+}
+
+.start-btn {
+  background: #4cafef;
+  color: white;
+}
+
+.reset-btn {
+  background: #ef476f;
+  color: white;
+}
+
+.start-btn:hover, .reset-btn:hover {
+  transform: translateY(-3px);
+}
+
+.breathing-guide {
+  flex: 1;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  max-width: 320px;
+}
+
+.breathing-guide h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.breathing-guide ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.breathing-guide li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: #444;
+}

@@ -1,13 +1,11 @@
-body {
-  margin: 0;
-  font-family: "Segoe UI", sans-serif;
-}
-
-/* Navbar height compensation */
-.dashboard {
-  background: linear-gradient(to right, #b47ac6, #a674c1); /* Darker purples */
+/* Root container */
+.dashboard-container {
+  background-color: #d7b3f2; /* Light purple background */
   min-height: 100vh;
-  padding-top: 70px; /* push content below navbar */
+  padding: 20px;
+  padding-top: 60px; /* Added extra space from the top */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
 }
 
 .dashboard-header {
@@ -19,83 +17,119 @@ body {
   border-bottom: 2px solid #d4c4e4;
 }
 
-.new-journal-btn {
-  background-color: #7b3fa3; /* Darker purple */
-  color: white;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.dashboard-main {
+/* Header */
+.dashboard-header {
   display: flex;
-  padding: 2rem;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
 }
 
-.journal-section {
-  width: 65%;
+.dashboard-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #4b0082;
 }
 
-.journal-card {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.journal-card h2 {
-  margin-top: 0;
-  font-size: 1.8rem;
-}
-
-.card-actions {
-  margin-top: 1rem;
-  display: flex;
-  gap: 1rem;
-}
-
-.card-actions button {
-  background-color: #4b0082;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.side-panel {
-  width: 35%;
-  margin-left: 2rem;
+/* Quote card */
+.quote-card {
   background-color: white;
   border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px 20px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
 }
 
-.upgrade-btn {
-  margin-top: 1rem;
-  background-color: #a64ca6;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+.quote-card p {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.quote-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quote-author img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.quote-author h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.quote-author p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: gray;
+}
+
+/* AI Chatbot icon */
+.ai-chatbot {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   cursor: pointer;
+  font-weight: 600;
+  color: #4b0082;
 }
-.myjournal {
-  background-color: #4b0082; /* Dark purple */
-  color: white;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+/* Cards layout */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
-.owner {
-  background: linear-gradient(90deg, #d8b4f8, #f8b4d8); /* Light purple to pink */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
+
+/* Individual card */
+.card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+}
+
+.card-icon {
+  color: #8a2be2;
+}
+
+.card h2 {
+  margin: 0;
   font-size: 1.2rem;
+  color: #4b0082;
 }
 
+.card p {
+  font-size: 0.9rem;
+  color: #555;
+}
 
+.card button {
+  align-self: start;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #8a2be2;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.card button:hover {
+  background-color: #6a1bb0;
+}
