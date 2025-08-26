@@ -10,29 +10,29 @@ It helps users track moods, talk anonymously, journal their thoughts, and access
 <table>
 <tr>
 <td align="center">
-  <img src="./frontend/public/assets/dashboard.png" width="300"/><br>
+  <img src="./frontend/public/assets/dashboard.png" width="500"/><br>
   <b>Dashboard</b>
 </td>
 <td align="center">
-  <img src="./frontend/public/assets/DiaryEntry.png" width="300"/><br>
+  <img src="./frontend/public/assets/DiaryEntry.png" width="500"/><br>
   <b>Journal</b>
 </td>
 <td align="center">
-  <img src="./frontend/public/assets/progress.png" width="300"/><br>
+  <img src="./frontend/public/assets/progress.png" width="500"/><br>
   <b>Progress Tracker</b>
 </td>
 </tr>
-  <td align="center">
-  <img src="./frontend/public/assets/mentalexercise.png" width="300"/><br>
-  <b>Mental Exercise </b>
-</td>
 <tr>
 <td align="center">
-  <img src="./frontend/public/assets/anonymouschat.png" width="300"/><br>
+  <img src="./frontend/public/assets/mentalexercise.png" width="500"/><br>
+  <b>Mental Exercise</b>
+</td>
+<td align="center">
+  <img src="./frontend/public/assets/anonymouschat.png" width="500"/><br>
   <b>Anonymous Chat</b>
 </td>
 <td align="center">
-  <img src="./frontend/public/assets/articles.png" width="300"/><br>
+  <img src="./frontend/public/assets/articles.png" width="500"/><br>
   <b>Articles</b>
 </td>
 </tr>
@@ -58,5 +58,3 @@ It helps users track moods, talk anonymously, journal their thoughts, and access
 **Database:** MongoDB  
 **AI Integration:** Hugging Face Inference API  
 **Other Tools:** Git, GitHub, JWT Auth  
-
----
