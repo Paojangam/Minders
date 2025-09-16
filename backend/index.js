@@ -9,13 +9,11 @@ const { Server } = require('socket.io');
 const authRoutes = require('./routes/authRoutes');
 const diaryRoutes = require('./routes/diaryRoutes');
 const userRoutes = require('./routes/userRoutes');
-// require support router later (after app and middleware) to avoid ordering/circular issues
-// const supportRouter = require('./routes/supportRouter');
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// ✅ CORS setup (keep this before route mounts)
 app.use(cors({
   origin: [
     'http://localhost:5173',          // local frontend
@@ -26,14 +24,10 @@ app.use(cors({
   credentials: true
 }));
 
-// ✅ Body parser MUST come before routes that read req.body
 app.use(express.json());
 
-// Now require & mount support router (after express.json())
-const supportRouter = require('./routes/supportRouter');
-app.use('/api/support', supportRouter);
 
-// Routes
+
 app.use('/api/auth', authRoutes);
 app.use('/api/diary', diaryRoutes);
 app.use('/api/user', userRoutes);
@@ -42,27 +36,22 @@ app.get('/', (req, res) => {
   res.send('Welcome to Minders API!');
 });
 
-// Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB Connected'))
   .catch((err) => console.error('MongoDB Error:', err));
 
-// ✅ Create HTTP server for Socket.IO
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: { origin: ['http://localhost:5173', 'https://minders-83rn.vercel.app'] }
 });
 
-// Waiting queue for chat
 let waitingUser = null;
 
-// Generate pseudonymous nickname
 function generateNickname() {
   const randomNum = Math.floor(Math.random() * 10000);
   return `User_${randomNum}`;
 }
 
-// Socket.IO connection
 io.on('connection', (socket) => {
   console.log(`User connected: ${socket.id}`);
 
@@ -102,7 +91,6 @@ io.on('connection', (socket) => {
   });
 });
 
-// ✅ Start server
 server.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
