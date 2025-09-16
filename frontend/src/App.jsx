@@ -1,9 +1,11 @@
+// App.js
 import React from 'react';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   useLocation,
+  Navigate,
 } from 'react-router-dom';
 
 import Home from './pages/Home';
@@ -14,7 +16,7 @@ import Entries from './pages/Entries';
 import Myaccount from './pages/Myaccount';
 import Setting from './components/Setting';
 import Navbar from './components/Navbar';
-import { AuthProvider } from './context/AuthContext';
+import { AuthProvider, useAuth } from './context/AuthContext';
 import PrivateRoute from './components/PrivateRoute';
 import GraphPage from './components/GraphPage';
 import Dashboard from './pages/Dashboard';
@@ -26,7 +28,11 @@ import MindfulnessMusic from './components/MindfulnessMusic';
 import GroundingExercise from './pages/GroundingExercise';
 import EducationalContent from './pages/EducationalContent';
 
-// Handles Navbar visibility
+const PublicRoute = ({ children, redirectTo = '/dashboard' }) => {
+  const { isAuthenticated } = useAuth();
+  return isAuthenticated ? <Navigate to={redirectTo} replace /> : children;
+};
+
 const AppRoutes = () => {
   const location = useLocation();
   const hideNavbarPaths = ['/login'];
@@ -35,81 +41,106 @@ const AppRoutes = () => {
   return (
     <>
       {showNavbar && <Navbar />}
+
       <Routes>
-        {/* Public Routes */}
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        {/* Root: if logged in -> dashboard, else show Home */}
+        <Route
+          path="/"
+          element={
+            <PublicRoute>
+              <Home />
+            </PublicRoute>
+          }
+        />
+
+        {/* Login: if already logged in -> dashboard, else show Login */}
+        <Route
+          path="/login"
+          element={
+            <PublicRoute>
+              <Login />
+            </PublicRoute>
+          }
+        />
+
         {/* Private Routes */}
         <Route
           path="/myjournal"
           element={
             <PrivateRoute>
-              <MyJournal/>
+              <MyJournal />
             </PrivateRoute>
           }
         />
-                <Route
+
+        <Route
           path="/dashboard"
           element={
             <PrivateRoute>
-              <Dashboard/>
+              <Dashboard />
             </PrivateRoute>
           }
         />
+
         <Route
           path="/anonymous-chat"
           element={
             <PrivateRoute>
-              <AnonymousChat/>
+              <AnonymousChat />
             </PrivateRoute>
           }
         />
-         
+
         <Route
           path="/mental-exercise"
           element={
             <PrivateRoute>
-              <MentalHealth/>
+              <MentalHealth />
             </PrivateRoute>
           }
         />
+
         <Route
           path="/breathing"
           element={
             <PrivateRoute>
-              <BreathingExercise/>
+              <BreathingExercise />
             </PrivateRoute>
           }
         />
+
         <Route
           path="/affirmations"
           element={
             <PrivateRoute>
-              <PositiveAffirmations/>
+              <PositiveAffirmations />
             </PrivateRoute>
           }
         />
-     <Route
+
+        <Route
           path="/mindful-music"
           element={
             <PrivateRoute>
-              <MindfulnessMusic/>
+              <MindfulnessMusic />
             </PrivateRoute>
           }
         />
+
         <Route
           path="/grounding"
           element={
             <PrivateRoute>
-              <GroundingExercise/>
+              <GroundingExercise />
             </PrivateRoute>
           }
         />
+
         <Route
           path="/educational-content"
           element={
             <PrivateRoute>
-              <EducationalContent/>
+              <EducationalContent />
             </PrivateRoute>
           }
         />
@@ -123,6 +154,7 @@ const AppRoutes = () => {
             </PrivateRoute>
           }
         />
+
         <Route
           path="/graph"
           element={
@@ -150,6 +182,7 @@ const AppRoutes = () => {
             </PrivateRoute>
           }
         />
+
         <Route
           path="/account"
           element={
@@ -158,6 +191,7 @@ const AppRoutes = () => {
             </PrivateRoute>
           }
         />
+
         <Route
           path="/setting"
           element={
@@ -166,9 +200,24 @@ const AppRoutes = () => {
             </PrivateRoute>
           }
         />
+
+        {/* Fallback: unknown routes -> send to home or dashboard depending on auth */}
+        <Route
+          path="*"
+          element={
+            // If authenticated, go to dashboard; otherwise go to home
+            <RequireRedirect />
+          }
+        />
       </Routes>
     </>
   );
+};
+
+// Fallback helper component for unknown routes
+const RequireRedirect = () => {
+  const { isAuthenticated } = useAuth();
+  return <Navigate to={isAuthenticated ? '/dashboard' : '/'} replace />;
 };
 
 const App = () => {
