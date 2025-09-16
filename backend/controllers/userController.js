@@ -1,9 +1,8 @@
 const User = require('../models/User');
 
-// GET /user/me
 const getUserProfile = async (req, res) => {
   try {
-    console.log("Fetching user with ID:", req.user.userId); // move log here
+    console.log("Fetching user with ID:", req.user.userId); 
 
     const user = await User.findById(req.user.userId).select('-password');
     if (!user) return res.status(404).json({ message: 'User not found' });
@@ -14,10 +13,9 @@ const getUserProfile = async (req, res) => {
   }
 };
 
-// DELETE /user/me
 const deleteUserProfile = async (req, res) => {
   try {
-    const userId = req.user.userId; // from auth middleware
+    const userId = req.user.userId; 
 
     const deletedUser = await User.findByIdAndDelete(userId);
 
@@ -32,7 +30,6 @@ const deleteUserProfile = async (req, res) => {
   }
 };
 
-// PUT /user/me
 const updateUserProfile = async (req, res) => {
   const { firstName, lastName, email } = req.body;
 

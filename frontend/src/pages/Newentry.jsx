@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../styles/Newentry.css";
 import Navbar from "../components/Navbar";
-import api from "../api"; // Axios instance
+import api from "../api"; 
 
 const NewEntry = () => {
-  const { id } = useParams(); // Get entry ID if available
-  const isEditing = Boolean(id); // true if editing
+  const { id } = useParams(); 
+  const isEditing = Boolean(id); 
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [message, setMessage] = useState('');

@@ -20,10 +20,7 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        <div className="ai-chatbot">
-          <FaRegComments size={30} />
-          <span>AI Chatbot</span>
-        </div>
+        
       </header>
 
       <main className="dashboard-cards">

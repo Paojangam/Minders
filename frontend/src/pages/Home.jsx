@@ -2,7 +2,6 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import '../styles/Home.css';
-import gpt from '../assets/gpt.png';
 import { FaLock, FaBrain, FaFeatherAlt, FaSmile } from 'react-icons/fa'; 
 
 const Home = () => {
@@ -15,14 +14,15 @@ const Home = () => {
       <section id="about" className="about-section">
         <h2>About</h2>
         <p>
-          MindVerse is a private diary app designed for deep reflection, emotional clarity, and personal growth. 
-          We combine simplicity and privacy with AI-powered prompts to help you unlock your thoughts and patterns.
+          Minders is a mental health app designed to support your well-being and personal growth. 
+          Reflect through private journal entries, share your thoughts anonymously in a safe chat,
+           try guided mental wellness exercises, and explore educational content to better understand and care for your mind.
         </p>
-        <img src={gpt} alt="MindVerse concept" className="about-image" />
+        <img src="/assets/gpt.png" alt="MindVerse concept" className="about-image" />
       </section>
       <section id='features' className="info-section">
-        <h2>Why MindVerse?</h2>
-        <p>MindVerse is your safe space to journal, reflect, and grow. Stay consistent with helpful prompts and track your emotional journey privately.</p>
+        <h2>Why Minders?</h2>
+        <p>Minders is your safe space to journal, reflect, and grow. Stay consistent with helpful prompts and track your emotional journey privately.</p>
   <div className="features-grid">
     <div className="feature-item">
       <FaLock className="feature-icon" />

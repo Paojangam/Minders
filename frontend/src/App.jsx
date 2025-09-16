@@ -64,6 +64,7 @@ const AppRoutes = () => {
             </PrivateRoute>
           }
         />
+         
         <Route
           path="/mental-exercise"
           element={

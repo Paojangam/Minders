@@ -37,7 +37,6 @@ const MyJournal = () => {
           </div>
         </div>
 
-        {/* Suggestions / Side Panel */}
         <div className="journal-suggestions">
           <h3>Ideas to get started</h3>
           <ul>

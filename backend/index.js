@@ -1,3 +1,4 @@
+// index.js
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -8,11 +9,13 @@ const { Server } = require('socket.io');
 const authRoutes = require('./routes/authRoutes');
 const diaryRoutes = require('./routes/diaryRoutes');
 const userRoutes = require('./routes/userRoutes');
+// require support router later (after app and middleware) to avoid ordering/circular issues
+// const supportRouter = require('./routes/supportRouter');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// ✅ CORS setup
+// ✅ CORS setup (keep this before route mounts)
 app.use(cors({
   origin: [
     'http://localhost:5173',          // local frontend
@@ -23,7 +26,12 @@ app.use(cors({
   credentials: true
 }));
 
+// ✅ Body parser MUST come before routes that read req.body
 app.use(express.json());
+
+// Now require & mount support router (after express.json())
+const supportRouter = require('./routes/supportRouter');
+app.use('/api/support', supportRouter);
 
 // Routes
 app.use('/api/auth', authRoutes);
