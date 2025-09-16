@@ -58,5 +58,5 @@ It helps users track moods, talk anonymously, journal their thoughts, and access
 **Database:** MongoDB  
 **AI Integration:** Hugging Face Inference API  
 **Other Tools:** Git, GitHub, JWT Auth  
-[![Visit Minders](https://img.shields.io/badge/Live%20Demo-Minders-brightgreen?style=for-the-badge&logo=vercel)](https://minders.onrender.com)
+[![Visit Minders](https://img.shields.io/badge/Live%20Demo-Minders-brightgreen?style=for-the-badge&logo=vercel)](https://minders-83rn.vercel.app/)
 
