@@ -1,13 +1,10 @@
 const DiaryEntry = require('../models/DiaryEntry');
-const analyzeMood = require('../models/analyzeMood');  // import your AI mood detection function
+const analyzeMood = require('../models/analyzeMood');  
 
-// @desc    Create a new diary entry with AI mood detection
-// @route   POST /api/diary
-// @access  Public (can add auth later)
 const createEntry = async (req, res) => {
   try {
     const { title, content } = req.body;
-    const userId = req.user?.userId; // safely access userId
+    const userId = req.user?.userId; 
 
     if (!userId) {
       return res.status(401).json({ message: 'User not authenticated' });
@@ -17,7 +14,6 @@ const createEntry = async (req, res) => {
       return res.status(400).json({ message: 'Title and content are required' });
     }
 
-    // Detect mood from content using AI
     const mood = await analyzeMood(content);
     console.log('Mood detected on create:', mood);
 
@@ -52,9 +48,6 @@ const getAllEntries = async (req, res) => {
   }
 };
 
-// @desc    Get a single entry by ID
-// @route   GET /api/diary/:id
-// @access  Public
 const getEntryById = async (req, res) => {
   try {
     const userId = req.user?.userId;
@@ -75,9 +68,7 @@ const getEntryById = async (req, res) => {
   }
 };
 
-// @desc    Update a diary entry by ID with AI mood detection
-// @route   PUT /api/diary/:id
-// @access  Public
+
 const updateEntryById = async (req, res) => {
   try {
     const { title, content } = req.body;
@@ -110,9 +101,7 @@ const updateEntryById = async (req, res) => {
   }
 };
 
-// @desc    Delete a diary entry by ID
-// @route   DELETE /api/diary/:id
-// @access  Public
+
 const deleteEntryById = async (req, res) => {
   try {
     const userId = req.user?.userId;
